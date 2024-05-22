@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-	</head>
-	<body>
-		<p>Hello World</p>
-	</body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Photography Website</title>
+	<style>
+		/* 样式可以根据需要进行修改 */
+		.slideshow-container {
+			position: relative;
+			max-width: 1000px;
+			margin: auto;
+		}
+
+		.mySlides {
+			display: none;
+		}
+
+		.prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			margin-top: -22px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+
+		.next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+
+		.prev:hover, .next:hover {
+			background-color: rgba(0,0,0,0.8);
+		}
+
+		.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+			background-color: #000000a6;
+		}
+	</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+	<div class="mySlides">
+		<img src="img1.jpg" style="width:100%">
+		<div class="text">Caption Text 1</div>
+	</div>
+
+	<div class="mySlides">
+		<img src="img2.jpg" style="width:100%">
+		<div class="text">Caption Text 2</div>
+	</div>
+
+	<div class="mySlides">
+		<img src="img3.jpg" style="width:100%">
+		<div class="text">Caption Text 3</div>
+	</div>
+
+	<a class="prev" onclick="plusSlides(-1)">❮</a>
+	<a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		if (n > slides.length) {slideIndex = 1}
+		if (n < 1) {slideIndex = slides.length}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		slides[slideIndex-1].style.display = "block";
+	}
+</script>
+
+<div>
+	<h2>About</h2>
+	<p>This is the about section of your photography website. You can provide information about yourself, your photography style, and your experience here.</p>
+</div>
+
+<div>
+	<h2>Portfolio</h2>
+	<p>This is the portfolio section where you can showcase your best photographs. You can categorize them into different albums or themes.</p>
+</div>
+
+<div>
+	<h2>Contact</h2>
+	<p>This is the contact section where visitors can get in touch with you. You can provide your email address, phone number, and links to your social media profiles.</p>
+</div>
+
+</body>
 </html>
